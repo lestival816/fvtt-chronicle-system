@@ -42,11 +42,11 @@
   "media": [
     {
       "type": "setup",
-      "url": "systems/fvttchroniclesystem/assets/iron-throne-logo.png",
-      "thumbnail": "systems/fvttchroniclesystem/assets/iron-throne-logo.png"
+      "url": "systems/fvttchroniclesystem/assets/dice-clipart.png",
+      "thumbnail": "systems/fvttchroniclesystem/assets/dice-clipart.png"
     }
   ],
-  "version": "0.2.0",
+  "version": "0.2.1",
   "compatibility": {
     "minimum": "13",
     "verified": "14.363"
@@ -69,7 +69,7 @@
   "packFolders": [],
   "socket": false,
   "manifest": "https://raw.githubusercontent.com/lestival816/fvtt-chronicle-system/main/system.json",
-  "download": "https://github.com/lestival816/fvtt-chronicle-system/releases/download/0.2.0/fvtt-cs.zip",
+  "download": "https://github.com/lestival816/fvtt-chronicle-system/releases/download/0.2.1/fvtt-cs.zip",
   "background": "systems/fvttchroniclesystem/assets/dice-clipart.png",
   "grid": {
     "type": 1,
