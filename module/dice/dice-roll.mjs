@@ -140,18 +140,18 @@ export class CsDiceRoll {
     const mPenaltyMod = parseInt(manualMods.manualPenaltyModifier) || 0;
 
     // Determine how many dice to keep (Test Dice minus Dice Penalties)
-    let diceToKeep = testDice - modifiers.testDicePenalty - mPenaltyDice - trainingPenaltyDice;
+    let diceToKeep = testDice - (modifiers.testDicePenalty || 0) - mPenaltyDice - trainingPenaltyDice;
 
     // Each point of frustration gained imposes –1D on all Deception and Persuasion tests
     // NPC doesn't have Frustration
     let frustrationApplied = 0;
     if (dataset.ability === "deception" || dataset.ability === "persuasion") {
-      frustrationApplied = modifiers.frustrationPenalty;
+      frustrationApplied = modifiers.frustrationPenalty || 0; 
       diceToKeep -= frustrationApplied;
     }
 
     // Determine flat penalties to result (Injuries, Fatigue, Armor)
-    let flatPenalty = modifiers.globalResultPenalty;
+    let flatPenalty = modifiers.globalResultPenalty || 0;
 
     //All forms of armor impose a penalty that you apply to the results of all Agility tests
     let armorApplied = 0;
@@ -165,9 +165,10 @@ export class CsDiceRoll {
 
     // Construct Formula / Format: Xd6dlY + Z
     const totalDiceCount = testDice + bonusDice + mBonusDice;
-    let totaldiceToDrop = totalDiceCount - diceToKeep;
 
-    LOGGER.debug("DiceRoll | Test Roll | Data", dataset, manualMods, modifiers, abilities, totalDiceCount, totaldiceToDrop);
+    // We make sure we don't drop negative dice if penalties made diceToKeep higher than total (rare but safe)
+    let totaldiceToDrop = Math.max(0, totalDiceCount - diceToKeep);
+
 
     let formula = "";
 
@@ -176,9 +177,14 @@ export class CsDiceRoll {
     if (totaldiceToDrop >= totalDiceCount || totalDiceCount <= 0) {
       formula = `0d6`;
     } else {
-      // Standard Chronicle System Formula: Roll X, Drop Y lowest
-      formula = `${totalDiceCount}d6dl${Math.max(0, totaldiceToDrop)}`;
+      // Do not add 'dl' if totaldiceToDrop is 0
+      formula = `${totalDiceCount}d6`;
+      if (totaldiceToDrop > 0) {
+        formula += `dl${totaldiceToDrop}`;
+      }
     }
+
+    LOGGER.debug("DiceRoll | Test Roll | Data", dataset, manualMods, modifiers, abilities, totalDiceCount, totaldiceToDrop, formula);
 
     // Add flat modifiers to the 0d6 or the standard roll
     if (totalFlatMod > 0) formula += ` + ${totalFlatMod}`;
@@ -189,7 +195,7 @@ export class CsDiceRoll {
     let flavor = `<strong>${action} ${label}</strong><br>`;
     flavor += `<small>${testDice} ${game.i18n.localize("GAME.MESSAGES.Roll.TestDice")}`;
     if (bonusDice + mBonusDice > 0) flavor += ` + ${bonusDice + mBonusDice} ${game.i18n.localize("GAME.MESSAGES.Roll.BonusDice")}`;
-    flavor += ` (${game.i18n.localize("GAME.MESSAGES.Roll.DropAction")} ${totaldiceToDrop})</small>`;
+    if (totaldiceToDrop >0) flavor += ` (${game.i18n.localize("GAME.MESSAGES.Roll.DropAction")} ${totaldiceToDrop})</small>`;
 
     // List active modifiers only if they exist
     let bonuses = [];
