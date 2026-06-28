@@ -1,0 +1,30 @@
+# --- DÉPENDANCES ---
+# On ne versionne jamais les bibliothèques téléchargées
+node_modules/
+
+# --- SÉCURITÉ ---
+# Fichiers contenant des secrets (clés API, mots de passe)
+.env
+.env.local
+.env.*.local
+
+# --- LOGS ---
+# Journaux d'erreurs générés par npm
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# --- ÉDITEUR (VSCodium / VS Code) ---
+# Paramètres propres à votre interface de travail
+.vscode/
+# Note : Parfois on garde .vscode/extensions.json pour recommander des plugins
+# mais par défaut, mieux vaut tout ignorer au début.
+
+# --- SYSTÈME ---
+.DS_Store
+Thumbs.db
+
+# --- DOSSIERS DE BUILD (Si vous en avez) ---
+dist/
+build/
+out/
