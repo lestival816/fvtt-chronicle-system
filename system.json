@@ -1,0 +1,83 @@
+{
+  "id": "fvttchroniclesystem",
+  "title": "Chronicle System for Foundry VTT (Unofficial)",
+  "description": "An unofficial implementation for the Chronicle System by Green Ronin Publishing. This system is used by Sword Chronicle: Feudal Fantasy Roleplaying and A Song of Ice & Fire Roleplaying. The implementation code is based on the Boilerplate System by Asacolips.",
+  "authors": [
+    {
+      "name": "Lesti",
+      "discord": ".lestival"
+    }
+  ],
+    "documentTypes": {
+    "Actor": {
+        "character": {
+            "htmlFields": ["biography"]
+        },
+        "npc": {
+            "htmlFields": ["biography"]
+        }
+    },
+    "Item": {
+        "gear": {
+            "htmlFields": ["description"]
+        },
+        "weapon": {
+            "htmlFields": ["description"]
+        },
+        "mount": {
+            "htmlFields": ["description"]
+        }
+    }
+  },
+  "flags": {
+    "hotReload": {
+      "extensions": ["css", "html", "hbs", "json"],
+      "paths": ["css", "lang", "templates"]
+    }
+  },
+  "url": "https://github.com/lestival816/fvttchroniclesystem",
+  "license": "LICENSE.txt",
+  "readme": "README.md",
+  "bugs": "https://github.com/lestival816/fvttchroniclesystem/issues",
+  "changelog": "CHANGELOG.md",
+  "media": [
+    {
+      "type": "setup",
+      "url": "systems/fvttchroniclesystem/assets/iron-throne-logo.png",
+      "thumbnail": "systems/fvttchroniclesystem/assets/iron-throne-logo.png"
+    }
+  ],
+  "version": "0.2.0",
+  "compatibility": {
+    "minimum": "13",
+    "verified": "14.363"
+  },
+  "esmodules": ["module/chroniclesystem.mjs"],
+  "styles": ["css/chroniclesystem.css"],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    },
+    {
+      "lang": "fr",
+      "name": "French",
+      "path": "lang/fr.json"
+    }
+  ],
+  "packs": [],
+  "packFolders": [],
+  "socket": false,
+  "manifest": "",
+  "download": "",
+  "background": "systems/fvttchroniclesystem/assets/dice-clipart.png",
+  "grid": {
+    "type": 1,
+    "distance": 5,
+    "units": "m",
+    "diagonals": 0
+  },
+  "primaryTokenAttribute": "health",
+  "secondaryTokenAttribute": "composure"
+}

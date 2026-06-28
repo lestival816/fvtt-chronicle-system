@@ -1,0 +1,759 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+:root {
+  --fvttcs-c-dark: #191813;
+  --fvttcs-c-faint: #c9c7b8;
+  --fvttcs-c-beige: #b5b3a4;
+  --fvttcs-c-tan: #444444;
+  --fvttcs-c-white: #ffffff;
+  --fvttcs-c-black: #000000;
+  --fvttcs-c-groove: #eeede0;
+}
+
+.theme-dark {
+  --fvttcs-c-dark: #c9c7b8;
+  --fvttcs-c-faint: #191813;
+  --fvttcs-c-beige: #444444;
+  --fvttcs-c-tan: #b5b3a4;
+  --fvttcs-c-white: #000000;
+  --fvttcs-c-black: #ffffff;
+  --fvttcs-c-groove: #11121f;
+}
+
+/* Global styles */
+.window-app {
+  font-family: "Roboto", sans-serif;
+}
+
+.rollable:hover, .rollable:focus {
+  color: var(--fvttcs-c-black);
+  text-shadow: 0 0 10px red;
+  cursor: pointer;
+}
+
+.grid,
+.grid-2col {
+  display: grid;
+  grid-column: span 2/span 2;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 10px 0;
+  padding: 0;
+}
+
+.grid-3col {
+  grid-column: span 3/span 3;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-4col {
+  grid-column: span 4/span 4;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.grid-5col {
+  grid-column: span 5/span 5;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.grid-6col {
+  grid-column: span 6/span 6;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.grid-7col {
+  grid-column: span 7/span 7;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.grid-8col {
+  grid-column: span 8/span 8;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+}
+
+.grid-9col {
+  grid-column: span 9/span 9;
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+}
+
+.grid-10col {
+  grid-column: span 10/span 10;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+}
+
+.grid-11col {
+  grid-column: span 11/span 11;
+  grid-template-columns: repeat(11, minmax(0, 1fr));
+}
+
+.grid-12col {
+  grid-column: span 12/span 12;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.grid-start-2 {
+  grid-column-start: 2;
+}
+
+.grid-start-3 {
+  grid-column-start: 3;
+}
+
+.grid-start-4 {
+  grid-column-start: 4;
+}
+
+.grid-start-5 {
+  grid-column-start: 5;
+}
+
+.grid-start-6 {
+  grid-column-start: 6;
+}
+
+.grid-start-7 {
+  grid-column-start: 7;
+}
+
+.grid-start-8 {
+  grid-column-start: 8;
+}
+
+.grid-start-9 {
+  grid-column-start: 9;
+}
+
+.grid-start-10 {
+  grid-column-start: 10;
+}
+
+.grid-start-11 {
+  grid-column-start: 11;
+}
+
+.grid-start-12 {
+  grid-column-start: 12;
+}
+
+.grid-span-2 {
+  grid-column-end: span 2;
+}
+
+.grid-span-3 {
+  grid-column-end: span 3;
+}
+
+.grid-span-4 {
+  grid-column-end: span 4;
+}
+
+.grid-span-5 {
+  grid-column-end: span 5;
+}
+
+.grid-span-6 {
+  grid-column-end: span 6;
+}
+
+.grid-span-7 {
+  grid-column-end: span 7;
+}
+
+.grid-span-8 {
+  grid-column-end: span 8;
+}
+
+.grid-span-9 {
+  grid-column-end: span 9;
+}
+
+.grid-span-10 {
+  grid-column-end: span 10;
+}
+
+.grid-span-11 {
+  grid-column-end: span 11;
+}
+
+.grid-span-12 {
+  grid-column-end: span 12;
+}
+
+.flex-group-center,
+.flex-group-left,
+.flex-group-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.flex-group-left {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.flex-group-right {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.flexshrink {
+  flex: 0;
+}
+
+.flex-between {
+  justify-content: space-between;
+}
+
+.flexlarge {
+  flex: 2;
+}
+
+.align-left {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.align-right {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.align-center {
+  justify-content: center;
+  text-align: center;
+}
+
+/* Styles limited to fvttcs sheets */
+.fvttcs .item-form {
+  font-family: "Roboto", sans-serif;
+}
+
+.fvttcs .flexrow {
+  display: flex;
+  flex-direction: row;
+}
+
+.fvttcs .flexcol {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.fvttcs .sheet-header {
+  flex: 0 auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+.fvttcs .sheet-header .profile-img {
+  flex: 0 0 100px;
+  height: 100px;
+  margin-right: 10px;
+}
+.fvttcs .sheet-header .header-fields {
+  flex: 1;
+}
+
+.fvttcs .tab {
+  max-height: 380px;
+}
+
+/* Discreet horizontal separator */
+.fvttcs .separator {
+  height: 1px;
+  background: var(--fvttcs-c-faint);
+  margin: 8px 0;
+  width: 100%;
+}
+
+/* Separator character span ( / ) */
+.fvttcs .sep {
+  padding: 0 4px;
+  margin: 0 2px;
+  align-self: center;
+}
+
+/* Margin Top 5px */
+.fvttcs .mt-5 {
+  margin-top: 5px;
+}
+
+/* Margin Botton 2px */
+.fvttcs .mb-2 {
+  margin-bottom: 2px;
+}
+
+/* Margin Botton 5px */
+.fvttcs .mb-5 {
+  margin-bottom: 5px;
+}
+
+/* Margin Right 5px */
+.fvttcs .mr-5 {
+  margin-right: 5px;
+}
+
+/* Margin Left 5px */
+.fvttcs .ml-5 {
+  margin-left: 5px;
+}
+
+/* Margin Left 2px */
+.fvttcs .ml-2 {
+  margin-left: 2px;
+}
+
+/* Biography and Item Description editor */
+.fvttcs .editor {
+  background: var(--fvttcs-c-faint);
+  margin-top: 2px;
+}
+
+/* Presentation in column within the tabs */
+.fvttcs .sheet-col {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+}
+
+/* Borders for the central column, for presentation in 3 colums */
+.fvttcs .sheet-col.border-left-right {
+  border-left: 1px solid var(--fvttcs-c-faint);
+  border-right: 1px solid var(--fvttcs-c-faint);
+}
+
+/** Character Statistics and Details **/
+
+/* Container for the header structure */
+.fvttcs .col-header-container {
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.fvttcs .col-header-container .scores-header {
+  flex: 1;
+  text-align: center;
+  margin: 0;
+  padding: 4px 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Standard label, base format */
+.fvttcs .resource-label {
+  font-weight: bold;
+}
+
+.fvttcs .info-label {
+  font-size: 12px;
+}
+
+
+/* Flexible label using margin-auto to create the variable space */
+.fvttcs .flex-grow-label {
+  flex-grow: 1;
+  padding-right: 5px; 
+  flex-shrink: 0;
+}
+
+/* Fixed width for labels to ensure vertical alignment of inputs */
+.fvttcs .fixed-label {
+  width: 65px;
+  flex-shrink: 0;
+}
+
+/* Score Inputs (fixed sized) */
+.fvttcs .scores-box {
+  width: 35px;     /* Prevent stretching inside flex containers and ensure fixed size for alignment */
+  height: 30px;
+  flex: 0 0 auto;
+  text-align: center;
+  color: var(--fvttcs-c-dark);
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0 2px;
+}
+
+/* Style for disabled fields (Read-only) */
+.fvttcs .box-disabled {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--fvttcs-c-faint);
+  color: var(--fvttcs-c-tan);
+}
+
+/* Character information Inputs (taking remaining space with min-width constraint) */
+.fvttcs .info-input {
+  flex: 1;
+  min-width: 110px;
+  height: 30px;
+  color: var(--fvttcs-c-dark);
+  font-size: 14px;
+}
+
+/* Information Inputs (taking remaining space with min-width constraint) */
+.fvttcs .info-input-small {
+  flex: 1;
+  min-width: 40px;
+  height: 30px;
+  color: var(--fvttcs-c-dark);
+  font-size: 14px;
+}
+
+
+/* --- Qualities Lists --- */
+
+.fvttcs .qualities-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  color: var(--fvttcs-c-tan);
+}
+
+.fvttcs .qualities-list .qualities-header {
+  height: 28px;
+  margin: 2px 0;
+  padding: 0;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.05);
+  border: 2px groove var(--fvttcs-c-groove);
+  font-weight: bold;
+}
+
+.fvttcs .qualities-list .qualities-header > * {
+  font-size: 12px;
+  text-align: center;
+}
+
+.fvttcs .qualities-list .qualities-header .qualities-elements {
+  padding-left: 5px;
+  text-align: left;
+}
+
+.fvttcs .qualities-list .qualities-controls {
+  flex: 0 0 15px;
+  justify-content: flex-end;
+  align-items: center;
+  padding-left: 5px;
+}
+.fvttcs .qualities-list .qualities-controls a {
+  font-size: 12px;
+  text-align: center;
+  margin: 0 2px;
+}
+
+.fvttcs .qualities-list .quality {
+  align-items: stretch;
+  padding: 0 2px;
+}
+
+/* --- Quality Fields (Name and Effect) --- */
+.fvttcs .qualities-list .quality .quality-name {
+  flex: 1; 
+  margin-right: 5px; 
+  padding: 0;
+}
+
+.fvttcs .qualities-list .quality .quality-effect {
+  flex: 2; 
+  padding: 0;
+}
+
+.fvttcs .qualities-list .quality input,
+.fvttcs .qualities-list .quality textarea {
+  color: var(--fvttcs-c-dark);
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 1.2;
+  vertical-align: top;
+  min-height: 28px;
+  height: 28px;
+  width: 100%;
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 3px;
+  border: 1px solid var(--fvttcs-c-faint);
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.fvttcs .qualities-list .quality textarea {
+  resize: vertical; 
+  overflow: auto;
+}
+
+/** Character Abilities Tab **/
+
+/* Abilities and Specialities */
+
+/* Column to display the Abilities and Specialities */
+.fvttcs .abilities-col {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+}
+
+/* Container for one Ability and associated Specialities */
+.fvttcs .ability-group {
+  margin-bottom: 5px;
+}
+
+.fvttcs .ability {
+  margin-bottom: 2px;
+}
+
+.fvttcs .speciality {
+  margin-left: 40px;
+}
+
+
+.fvttcs .items-header {
+  height: 28px;
+  margin: 2px 0;
+  padding: 0;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.05);
+  border: 2px groove var(--fvttcs-c-groove);
+  font-weight: bold;
+}
+.fvttcs .items-header > * {
+  font-size: 14px;
+  text-align: center;
+}
+.fvttcs .items-header .item-name {
+  font-weight: bold;
+  padding-left: 5px;
+  text-align: left;
+  display: flex;
+}
+.fvttcs .items-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  color: var(--fvttcs-c-tan);
+}
+.fvttcs .items-list .item-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.fvttcs .items-list .item-name {
+  flex: 2;
+  margin: 0;
+  overflow: hidden;
+  font-size: 13px;
+  text-align: left;
+  align-items: center;
+  display: flex;
+}
+.fvttcs .items-list .item-name h3, .fvttcs .items-list .item-name h4 {
+  margin: 0;
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+.fvttcs .items-list .item-controls {
+  display: flex;
+  flex: 0 0 100px;
+  justify-content: flex-end;
+}
+.fvttcs .items-list .item-controls a {
+  font-size: 12px;
+  text-align: center;
+  margin: 0 6px;
+}
+.fvttcs .items-list .item {
+  align-items: center;
+  padding: 0 2px;
+  border-bottom: 1px solid var(--fvttcs-c-faint);
+}
+.fvttcs .items-list .item:last-child {
+  border-bottom: none;
+}
+.fvttcs .items-list .item .item-name {
+  color: var(--fvttcs-c-dark);
+}
+.fvttcs .items-list .item .item-name .item-image {
+  flex: 0 0 30px;
+  height: 30px;
+  background-size: 30px;
+  border: none;
+  margin-right: 5px;
+}
+.fvttcs .items-list .item-prop {
+  text-align: center;
+  border-left: 1px solid #c9c7b8;
+  border-right: 1px solid #c9c7b8;
+  font-size: 12px;
+}
+.fvttcs .items-list .items-header {
+  height: 28px;
+  margin: 2px 0;
+  padding: 0;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.05);
+  border: 2px groove var(--fvttcs-c-groove);
+  font-weight: bold;
+}
+.fvttcs .items-list .items-header > * {
+  font-size: 12px;
+  text-align: center;
+}
+.fvttcs .items-list .items-header .item-name {
+  padding-left: 5px;
+  text-align: left;
+}
+.fvttcs .item-formula {
+  flex: 0 0 200px;
+  padding: 0 8px;
+}
+.fvttcs .effects-header {
+  height: 28px;
+  margin: 2px 0;
+  padding: 0;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.05);
+  border: 2px groove var(--fvttcs-c-groove);
+  font-weight: bold;
+}
+.fvttcs .effects-header > * {
+  font-size: 14px;
+  text-align: center;
+}
+.fvttcs .effects-header .effect-name {
+  font-weight: bold;
+  padding-left: 5px;
+  text-align: left;
+  display: flex;
+}
+.fvttcs .effects-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  color: var(--fvttcs-c-tan);
+}
+.fvttcs .effects-list .effect-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.fvttcs .effects-list .effect-name {
+  flex: 2;
+  margin: 0;
+  overflow: hidden;
+  font-size: 13px;
+  text-align: left;
+  align-items: center;
+  display: flex;
+}
+.fvttcs .effects-list .effect-name h3, .fvttcs .effects-list .effect-name h4 {
+  margin: 0;
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+.fvttcs .effects-list .effect-controls {
+  display: flex;
+  flex: 0 0 100px;
+  justify-content: flex-end;
+}
+.fvttcs .effects-list .effect-controls a {
+  font-size: 12px;
+  text-align: center;
+  margin: 0 6px;
+}
+.fvttcs .effects-list .effect {
+  align-items: center;
+  padding: 0 2px;
+  border-bottom: 1px solid var(--fvttcs-c-faint);
+}
+.fvttcs .effects-list .effect:last-child {
+  border-bottom: none;
+}
+.fvttcs .effects-list .effect .effect-name {
+  color: var(--fvttcs-c-dark);
+}
+.fvttcs .effects-list .effect .effect-name .effect-image {
+  flex: 0 0 30px;
+  height: 30px;
+  background-size: 30px;
+  border: none;
+  margin-right: 5px;
+}
+.fvttcs .effects-list .effect-prop {
+  text-align: center;
+  border-left: 1px solid #c9c7b8;
+  border-right: 1px solid #c9c7b8;
+  font-size: 12px;
+}
+.fvttcs .effects-list .effects-header {
+  height: 28px;
+  margin: 2px 0;
+  padding: 0;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.05);
+  border: 2px groove var(--fvttcs-c-groove);
+  font-weight: bold;
+}
+.fvttcs .effects-list .effects-header > * {
+  font-size: 12px;
+  text-align: center;
+}
+.fvttcs .effects-list .effects-header .effect-name {
+  padding-left: 5px;
+  text-align: left;
+}
+.fvttcs .effect-formula {
+  flex: 0 0 200px;
+  padding: 0 8px;
+}
+.fvttcs .effects .item .effect-source,
+.fvttcs .effects .item .effect-duration,
+.fvttcs .effects .item .effect-controls {
+  text-align: center;
+  border-left: 1px solid #c9c7b8;
+  border-right: 1px solid #c9c7b8;
+  font-size: 12px;
+}
+.fvttcs .effects .item .effect-controls {
+  border: none;
+}
+
+
+/* Dialog Sheet */
+.fvttcs .dialog-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.fvttcs .dialog-group {
+  display:flex;
+  flex-direction: row;
+  margin-bottom: 2px;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.fvttcs .dialog-footer {
+  display:flex;
+  flex-direction: row;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.fvttcs .mod-box {
+  width: 35px;     /* Prevent stretching inside flex containers and ensure fixed size for alignment */
+  height: 35px;
+  flex: 0 0 auto;
+  text-align: center;
+  margin: 0 2px;
+}

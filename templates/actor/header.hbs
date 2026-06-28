@@ -1,0 +1,110 @@
+{{! Sheet Header }}
+<header class='sheet-header'>
+  <img
+    class='profile-img'
+    src='{{actor.img}}'
+    data-edit='img'
+    data-action='onEditImage'
+    data-tooltip='{{actor.name}}'
+    height='100'
+    width='100'
+  />
+  <div class='header-fields'>
+    <div class='document-name'>
+      <input
+        name='name'
+        type='text'
+        value='{{actor.name}}'
+        placeholder='Name'
+      />
+    </div>
+
+    <div class='grid grid-3col'>
+      <div class='flex-group-center sheet-col'>
+        <label 
+          form='system.health.value' 
+          class='resource-label'
+          data-tooltip='{{localize 'CS_SYSTEM.Actor.Character.Fields.health.tooltip'}}'
+        >
+          {{localize 'CS_SYSTEM.Actor.Character.Fields.health.label'}}
+        </label>
+        <div class='flexrow flex-group-center mt-5'>
+          <input
+            type='text'
+            name='system.health.value'
+            value='{{system.health.value}}'
+            class='scores-box'
+            data-dtype='Number'
+          />
+          <span class='sep'>/</span>
+          <input
+            type='text'
+            disabled='true'
+            name='system.health.max'
+            value='{{system.health.max}}'
+            class='scores-box box-disabled'
+            data-dtype='Number'
+          />
+        </div>
+      </div>
+
+      <div class='flex-group-center sheet-col'>
+        <label 
+          form='system.injuries.value' 
+          class='resource-label'
+          data-tooltip='{{localize 'CS_SYSTEM.Actor.Character.Fields.injuries.tooltip'}}'
+        >
+          {{localize 'CS_SYSTEM.Actor.Character.Fields.injuries.label'}}
+        </label>
+        <div class='flexrow flex-group-center mt-5'>
+          <input
+            type='text'
+            name='system.injuries.value'
+            value='{{system.injuries.value}}'
+            class='scores-box'
+            data-dtype='Number'
+          />
+          <span class='sep'>/</span>
+          <input
+            type='text'
+            disabled='true'
+            name='system.injuries.max'
+            value='{{system.injuries.max}}'
+            class='scores-box box-disabled'
+            data-dtype='Number'
+          />
+        </div>
+      </div>
+    {{#if (eq actor.type 'character')}}
+      <div class='sheet-col flex-group-center'>
+        <label 
+          form='system.wounds.value' 
+          class='resource-label'
+          data-tooltip='{{localize 'CS_SYSTEM.Actor.Character.Fields.wounds.tooltip'}}'
+        >
+          {{localize 'CS_SYSTEM.Actor.Character.Fields.wounds.label'}}
+        </label>
+        <div class='flexrow flex-group-center mt-5'>
+          <input
+            type='text'
+            name='system.wounds.value'
+            value='{{system.wounds.value}}'
+            class='scores-box'
+            data-dtype='Number'
+          />
+          <span class='sep'>/</span>
+          <input
+            type='text'
+            disabled='true'
+            name='system.wounds.max'
+            value='{{system.wounds.max}}'
+            class='scores-box box-disabled'
+            data-dtype='Number'
+          />
+        </div>
+      </div>
+    {{/if}}
+
+    </div>
+  </div>
+</header>

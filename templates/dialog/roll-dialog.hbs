@@ -1,0 +1,28 @@
+<section class='dialog-container'>
+
+    <div class='dialog-group'>
+        <label class='flex-grow-label'>{{localize 'GAME.DIALOG.RollModifiers.BonusDice'}}</label>
+        <input class='mod-box' type='number' name='manualBonusDice' value='{{manualBonusDice}}' min='0' step='1'>
+    </div>
+    <div class='dialog-group'>
+        <label class="flex-grow-label">{{localize 'GAME.DIALOG.RollModifiers.PenaltyDice'}}</label>
+        <input class='mod-box' type='number' name='manualPenaltyDice' value='{{manualPenaltyDice}}' min='0'>
+    </div>
+    <div class='dialog-group'>
+        <label class="flex-grow-label">{{localize 'GAME.DIALOG.RollModifiers.BonusModifier'}}</label>
+        <input class='mod-box' type='number' name='manualBonusModifier' value='{{manualBonusModifier}}' min='0'>
+    </div>
+    <div class='dialog-group'>
+        <label class="flex-grow-label">{{localize 'GAME.DIALOG.RollModifiers.PenaltyModifier'}}</label>
+        <input class='mod-box' type='number' name='manualPenaltyModifier' value='{{manualPenaltyModifier}}' min='0'>
+    </div>
+
+    <div class="dialog-footer">
+        {{#each buttons}}
+            <button type="{{type}}" data-action="{{action}}">
+            <i class="{{icon}}"></i> {{localize label}}
+            </button>
+        {{/each}}
+    </div>
+
+</section>

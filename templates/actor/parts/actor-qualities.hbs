@@ -1,0 +1,38 @@
+{{! Other Quakities part part for Character Details Tab }}
+<div class='sheet-col'>
+  <ol class='qualities-list'>
+    <li class='flexrow qualities-header'>
+      <div class='qualities-elements'>{{localize label}}</div>
+      <div class='qualities-controls'>
+        <a 
+          data-action='addSimpleQuality' 
+          data-path='{{path}}'
+          data-tooltip='{{localize "GAME.MESSAGES.List.create"}}'
+        >
+          <i class='fas fa-plus'></i>
+        </a>
+      </div>
+    </li>
+    {{#each collection as |value i|}}
+      <li class='flexrow quality'>
+        <div class='quality-name'>
+          <input 
+            type='text' 
+            name='{{../path}}.{{i}}' 
+            value='{{value}}' 
+          />
+        </div>
+        <div class='qualities-controls'>
+          <a 
+            data-action='removeQuality' 
+            data-path='{{../path}}' 
+            data-index='{{i}}'
+            data-tooltip='{{localize "GAME.MESSAGES.List.delete"}}'
+          >
+            <i class='fas fa-trash'></i>
+          </a>
+        </div>
+      </li>
+    {{/each}}
+  </ol>
+</div>

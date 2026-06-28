@@ -1,0 +1,39 @@
+{{! Benefits and Drawbacks part for Character Details Tab }}
+<div class='sheet-col'>
+  <div class='flexrow col-header-container'>
+    <h3 class='scores-header'>{{localize header}}</h3>
+  </div>
+
+  <ol class='qualities-list'>
+    <li class='flexrow qualities-header'>
+      <div class='qualities-elements'>{{localize nameLabel}}</div>
+      <div class='qualities-elements'>{{localize effectLabel}}</div>
+      <div class='qualities-controls'>
+        <a data-action='addQuality' data-path='{{path}}'>
+          <i class='fas fa-plus'></i>
+        </a>
+      </div>
+    </li>
+
+    {{#each collection as |item i|}}
+      <li class='flexrow quality'>
+        <div class='quality-name'>
+          <input 
+            type='text' 
+            name='{{../path}}.{{i}}.name' 
+            value='{{item.name}}' 
+            placeholder='{{localize ../nameLabel}}'
+          />
+        </div>
+        <div class='quality-effect'>
+          <textarea name='{{../path}}.{{i}}.effect'>{{item.effect}}</textarea>
+        </div>
+        <div class='qualities-controls'>
+          <a data-action='removeQuality' data-path='{{../path}}' data-index='{{i}}' data-tooltip='{{localize "GAME.MESSAGES.List.delete"}}'>
+            <i class='fas fa-trash'></i>
+          </a>
+        </div>
+      </li>
+    {{/each}}
+  </ol>
+</div>

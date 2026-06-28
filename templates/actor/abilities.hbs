@@ -1,0 +1,125 @@
+{{! Abilities Tab }}
+<section class='tab abilities scrollable {{tab.cssClass}}' data-group='primary' data-tab='abilities'>
+  
+  <section class='grid grid-2col'>
+
+    {{#each (list abilitiesLeft abilitiesRight) as |column|}}
+    <div class='abilities-col'>
+      <div class='ability-group'>
+        {{! render abilities}}
+        {{#each column as |ability abilityKey|}}
+          <div class='ability'>
+            <div class='flex-group-left mb-2'>
+              <input
+                type='text'
+                name='system.abilities.{{abilityKey}}.value'
+                value='{{ability.value}}'
+                class='scores-box'
+                data-dtype='Number'
+              />
+              <label
+                class='resource-label ml-5' {{! -- rollable removed --}}
+                data-action='roll'
+                data-roll-type='ability'
+                data-ability={{abilityKey}}
+                data-roll='{{ability.value}}'
+                data-label='{{ability.label}}'>{{ability.label}}
+              </label>
+              <i
+                class='fa fa-dice rollable ml-5'
+                data-action='roll'
+                data-roll-type='ability'
+                data-ability={{abilityKey}}
+                data-roll='{{ability.value}}'
+                data-label='{{ability.label}}'></i>
+            </div>
+            
+            {{! render specialities }}
+
+            {{! Special case for languages, the user can add custom specialities}}
+            {{#if (eq abilityKey 'language')}}
+              <div class='speciality'>
+                {{#each ability.specialities as |spec specKey|}}
+                  <div class='flex-group-left mb-2'>
+                    <input
+                      type='text'
+                      name='system.abilities.{{abilityKey}}.specialities.{{specKey}}.value'
+                      value='{{spec.value}}'
+                      class='scores-box'
+                      data-dtype='Number'
+                      />
+                    <input
+                      type='text'
+                      name='system.abilities.language.specialities.{{specKey}}.label'
+                      value='{{spec.label}}'
+                      class='info-input ml-5'
+                      data-dtype='String'
+                    />
+                    <i class='fas fa-dice rollable ml-5'
+                      data-action='roll'
+                      data-roll-type='speciality'
+                      data-ability={{abilityKey}}
+                      data-speciality='{{specKey}}'
+                      data-roll='{{ability.value}}:{{spec.value}}'
+                      data-label='{{ability.label}} | {{spec.label}}'></i>
+                    <a class='resource-label ml-2' 
+                      data-action='deleteSpeciality'
+                      data-ability='language'
+                      data-speciality='{{specKey}}'
+                      data-tooltip='{{localize 'GAME.MESSAGES.List.deleteLanguage'}}'
+                    >
+                    <i class='fas fa-trash'></i>
+                    </a>
+                  </div>
+                {{/each}}
+                  <div class='flex-group-left mt-5'>
+                    <a class='resource-label ml-5'
+                      data-action='addSpeciality'
+                      data-ability='language'
+                      data-tooltip='{{localize 'GAME.MESSAGES.List.addLanguage'}}'
+                    >
+                    <i class='fas fa-plus'></i>
+                    </a>
+                  </div>
+              </div>  
+
+            {{! Other specialities}}
+            {{else if ability.sortedSpecialities}}
+            <div class='speciality'>
+              {{#each ability.sortedSpecialities as |speciality|}}
+                <div class='flex-group-left mb-2'>
+                  <input
+                    type='text'
+                    name='system.abilities.{{abilityKey}}.specialities.{{speciality.key}}.value'
+                    value='{{speciality.value}}'
+                    class='scores-box'
+                    data-dtype='Number'
+                  />
+                  <label class='resource-label ml-5' {{! -- rollable removed --}}
+                    data-action='roll'
+                    data-roll-type='speciality'
+                    data-ability={{abilityKey}}
+                    data-speciality='{{speciality.key}}'
+                    data-roll='{{ability.value}}:{{speciality.value}}'
+                    data-label='{{ability.label}} | {{speciality.label}}'>{{speciality.label}}</label>
+                  <i class='fas fa-dice rollable ml-5'
+                    data-action='roll'
+                    data-roll-type='speciality'
+                    data-ability={{abilityKey}}
+                    data-speciality='{{speciality.key}}'
+                    data-roll='{{ability.value}}:{{speciality.value}}'
+                    data-label='{{ability.label}} | {{speciality.label}}'></i>
+                </div>
+              {{/each}}
+            </div>
+            {{/if}}
+            {{! -- end specilities}}
+          </div>
+        {{/each}}
+      </div>
+    </div>
+    {{/each}}
+
+  </section>
+
+</section>

@@ -1,0 +1,383 @@
+{
+    "CS_SYSTEM": {
+        "Ability": {
+            "label": "Ability",
+
+            "Agility": "Agility",
+            "AnimalHandling": "Animal Handling",
+            "Athletics": "Athletics",
+            "Awareness": "Awareness",
+            "Cunning": "Cunning",
+            "Deception": "Deception",
+            "Endurance": "Endurance",
+            "Fighting": "Fighting",
+            "Healing": "Healing",
+            "Language": "Language",
+            "Knowledge": "Knowledge",
+            "Marksmanship": "Marksmanship",
+            "Persuasion": "Persuasion",
+            "Status": "Status",
+            "Stealth": "Stealth",
+            "Survival": "Survival",
+            "Thievery": "Thievery",
+            "Warfare": "Warfare",
+            "Will": "Will"
+        },       
+        "Speciality": {
+            "label": "Speciality",
+
+            "Acrobatics": "Acrobatics",
+            "Balance": "Balance",
+            "Contortions": "Contortions",
+            "Dodge": "Dodge",
+            "Quickness": "Quickness",
+
+            "Charm_A": "Charm",
+            "Drive": "Drive",
+            "Ride": "Ride",
+            "Train": "Train",
+
+            "Climb": "Climb",
+            "Jump": "Jump",
+            "Run": "Run",
+            "Strength": "Strength",
+            "Swim": "Swim",
+            "Throw": "Throw",
+
+            "Empathy": "Empathy",
+            "Notice": "Notice",
+
+            "Decipher": "Decipher",
+            "Logic": "Logic",
+            "Memory": "Memory",
+
+            "Act": "Act",
+            "Bluff": "Bluff",
+            "Cheat": "Cheat",
+            "Disguise": "Disguise",
+
+            "Resilience": "Resilience",
+            "Stamina": "Stamina",
+
+            "Axes": "Axes",
+            "Bludgeons": "Bludgeons",
+            "Brawling": "Brawling",
+            "Fencing": "Fencing",
+            "LongBlades": "Long Blades",
+            "Polearms": "Polearms",
+            "Shields": "Shields",
+            "ShortBlades": "Short Blades",
+            "Spears": "Spears",
+
+            "Diagnose": "Diagnose",
+            "TreatAilment": "Treat Ailment",
+            "TreatInjury": "Treat Injury",
+
+            "Common": "Common Tongue",
+
+            "Education": "Education",
+            "Research": "Research",
+            "Streetwise": "Streetwise",
+
+            "Bows": "Bows",
+            "Crossbows": "Crossbows",
+            "Siege": "Siege",
+            "Thrown": "Thrown",
+
+            "Bargain": "Bargain",
+            "Charm_P": "Charm",
+            "Convince": "Convince",
+            "Incite": "Incite",
+            "Intimidate": "Intimidate",
+            "Seduce": "Seduce",
+            "Taunt": "Taunt",
+
+            "Breeding": "Breeding",
+            "Reputation": "Reputation",
+            "Stewardship": "Stewardship",
+            "Tournaments": "Tournaments",
+
+            "BlendIn": "Blend In",
+            "Sneak": "Sneak",
+
+            "Forage": "Forage",
+            "Hunt": "Hunt",
+            "Orientation": "Orientation",
+            "Track": "Track",
+
+            "PickLock": "Pick Lock",
+            "SleightOfHand": "Sleight of Hand",
+            "Steal": "Steal",
+
+            "Command": "Command",
+            "Strategy": "Strategy",
+            "Tactics": "Tactics",
+
+            "Courage": "Courage",
+            "Coordinate": "Coordinate",
+            "Dedication": "Dedication"
+        },
+        "SheetLabels": {
+            "Actor": "Actor Sheet",
+            "Item": "Item Sheet"
+        },
+        "Actor": {
+            "Tabs": {
+                "Details": "Character Details",
+                "Abilities": "Abilities",
+                "Combat": "Combat & Intrigue",
+                "Gear": "Gear",
+                "Effects": "Effects"
+            },
+            "Character": {  
+                "Fields": {
+                    "biography": {
+                        "header": "PERSONAL HISTORY"
+                    },
+                    "health": {
+                        "label": "Health",
+                        "tooltip": "Health = Endurance Rank x 3"
+                    },
+                     "injuries": {
+                        "label": "Injuries",
+                        "tooltip": "Injuries impose -1 to all tests"
+                    },
+                    "wounds": {
+                        "label": "Wounds",
+                        "tooltip":"Wounds impose -1D to all tests"               
+                    },
+                    "combat": {
+                        "header": "COMBAT",
+                        "defense": {
+                            "label": "Defense",
+                            "tooltip": "Agility + Athletics + Awarness + Defensive Bonus",
+                            "tooltipSIFRP": "Agility + Athletics + Awarness + Defensive Bonus - Armor Penalty",
+                            "bonus": "Bonus"
+                        },
+                        "initiative": {
+                            "label": "Initiative"
+                        }
+                    },
+                    "intrigue":{
+                        "header": "INTRIGUE",
+                        "defense": {
+                            "label": "Defense",
+                            "tooltip": "Awarness + Cunning + Status",
+                            "bonus": "Bonus"
+                        },                 
+                        "initiative": {
+                            "label": "Initiative"
+                        }
+                    },                    
+                    "armor": {
+                        "header": "ARMOR",
+                        "placeholder": "Clothing",
+                        "rating": "Armor Rating",
+                        "penalty": "Armor Penalty",
+                        "bulk": "Armor Bulk"
+                    },
+                    "composure": {
+                        "label": "Composure",
+                        "bonus": "Composure Bonus"
+                    },
+                    "frustration": {
+                        "label": "Frustration",
+                        "tooltip": "-1D on Deception and Persuasion"
+                    },
+                    "fatigue": {
+                        "label": "Fatigue",
+                        "tooltip": "-1 to all tests"
+                    },
+                    "qualities": {
+                        "header": "QUALITIES",
+                        "destiny": {
+                            "label": "Destiny",
+                            "base": "Base",
+                            "gained": "Gained",
+                            "invested": "Invested",
+                            "spent": "Spent",
+                            "burnt": "Burnt",
+                            "available": "Available"                                                                             
+                        },
+                        "glory": {
+                            "label": "Glory",
+                            "total": "Total",
+                            "spent": "Spent",
+                            "available":"Available"
+                        },
+                        "experience": {
+                            "label": "Experience",
+                            "total": "Total",
+                            "spent": "Spent",
+                            "available":"Available"
+                        },
+                        "benefits": {
+                            "header": "Benefits",
+                            "name": "Name",
+                            "effect": "Effect",
+                            "placeholder":"Effect "
+                        },
+                        "drawbacks": {
+                            "header": "Drawbacks",
+                            "name": "Name",
+                            "effect": "Effect",
+                            "placeholder":"Effect "
+                        },
+                        "virtues": "Virtues",
+                        "vices": "Vices",
+                        "goals": "Goals",
+                        "motivations": "Motivations",
+                        "mannerisms":  "Mannerisms",
+                        "distinguishingFeatures": "Distinguishing Features",
+                        "retainers":  "Retainers",
+                        "allies": "Allies",
+                        "enemies": "Enemies",
+                        "oaths": "Oaths"
+                    },
+                    "details": {
+                        "header": "Character Details",
+                        "age": "Age",
+                        "gender": "Gender",
+                        "eyeColor": "Eye Color",
+                        "hairColor":"Hair Color",
+                        "height": "Height",
+                        "weight": "Weight",
+                        "house": "House",
+                        "motto": "Motto"
+                    },
+                    "coinage": {
+                        "header": "COINAGE",
+                        "copper": {
+                            "label": "Copper Pennies",
+                            "abbr": "cp"
+                        },
+                        "silver": {
+                            "label": "Silver Stags",
+                            "abbr": "ss"
+                        },
+                        "gold": {
+                            "label": "Gold Dragons",
+                            "abbr": "gd"
+                        },
+                        "rates": {
+                            "ss2cp": "Silver Stag = 56 Pennies",
+                            "gd2ss":"Gold Dragon = 210 Stags (11,760 Pennies)"
+                        }
+                    }    
+                }
+            },
+            "NPC": {
+                "Fields": {}
+            }
+        },
+        "Item": {
+            "Tabs": {
+                "Attributes": "Attributes",
+                "Description": "Description"
+            },
+            "Fields": {
+                "cost": "Cost",
+                "quantity": "Quantity",
+                "weight": "Weight"
+            },
+            "Gear": {
+                "label": "Gear"
+            },
+            "Weapon":{
+                "label": "Weapon",
+                "button":{
+                    "attack": "attack",
+                    "damages": "damages"
+                },
+                "Fields": {
+                    "type": {
+                        "melee": "Melee",
+                        "ranged": "Ranged"
+                    },
+                    "typeLabel": "Weapon Type",
+                    "quality": {
+                        "label": "Quality",
+                        "poor": "Poor",
+                        "common": "Common",
+                        "superior": "Superior",
+                        "extraordinary": "Extraordinary"
+                    },
+                    "training": "Training",
+                    "damageAbility": "Damage",
+                    "damageModifier": "Modifier",
+                    "qualities": {
+                        "label": "Qualities",
+                        "placeholder": "e.g. Slow, Powerful, Piercing 1..."
+                    }
+                }
+            },
+            "Mount":{
+                "label": "Mount & Livestock"
+            }        
+        }
+    },
+
+    "TYPES": {
+        "Actor": {
+            "character": "Character",
+            "npc": "Non Playable Character"
+        },
+        "Item": {
+            "gear": "Gear",
+            "mount": "Mount & Livestock",
+            "weapon": "Weapon"
+
+        }
+    },
+
+    "GAME": {
+        "SETTINGS": {
+            "DebugLogs": {
+                "name": "Enable Debug Logging",
+                "hint": "If enabled, detailed debug messages will be printed to the console (F12). Keep disabled for normal use."
+            },
+            "CurrentVersion" : {
+                "name": "Current Version"
+            }
+        },
+        "MESSAGES":{
+            "DataControl": {
+                "specialityExceedAbility": "The specialty rank cannot exceed the ability rank.",
+                "noNegativeValue": "must be 0 or above."
+            },
+            "List": {
+                "create": "Create element",
+                "delete": "Delete element",
+                "update": "Update element",
+                "placeholder": "description...",
+                "weaponHeaderAction": "Action",
+                "weaponHeaderDamage": "Damage",
+                "addLanguage": "Add language",
+                "deleteLanguage": "Delete language"
+            },
+            "Roll": {
+                "TestAction": "tests",
+                "CombatInitiativeAction": "tests Combat Initiative",
+                "IntrigueInitiativeAction": "tests Intrigue Initiative",
+                "CombatAttackAction": "attacks with",
+                "TestDice": "Test Dice",
+                "BonusDice": "Bonus Dice",
+                "DropAction": "Drop",
+                "Penalties": "Penalties",
+                "Bonus": "Bonuses"
+            },
+            "NightsWatch": "For the Watch!"
+        },
+        "DIALOG":{
+            "RollModifiers":{
+                "Title": "Test Modifiers",
+                "SubmitLabel": "Submit",
+                "CancelLabel": "Cancel",
+                "BonusDice": "Bonus Dice Modifier",
+                "BonusModifier": "Bonus Modifier",
+                "PenaltyDice": "Penalty Dice Modifier",
+                "PenaltyModifier": "Penalty Modifier"
+            }
+        }
+    }
+}

@@ -1,0 +1,57 @@
+<header class='sheet-header'>
+  <img
+    class='profile-img'
+    src='{{item.img}}'
+    data-edit='img'
+    data-action='onEditImage'
+    data-tooltip='{{item.name}}'
+  />
+  <div class='header-fields'>
+    <div class='document-name'>
+      <input name='name' type='text' value='{{item.name}}' placeholder='Name' />
+    </div>
+
+    <div class='grid grid-3col'>
+
+      <div class='flex-group-center sheet-col'>
+        <label class='resource-label'>{{localize 'CS_SYSTEM.Item.Fields.cost'}}</label>
+        <input
+          class='info-input-small'
+          type='text'
+          name='system.cost'
+          value='{{system.cost}}'
+          data-dtype='String'
+        />
+      </div>
+
+      {{#if (or (eq item.type 'gear') (eq item.type 'mount'))}}
+        <div class='flex-group-center sheet-col'>
+          <label class='resource-label'>{{localize 'CS_SYSTEM.Item.Fields.quantity'}}</label>
+          <input
+            class='info-input-small'
+            type='text'
+            name='system.quantity'
+            value='{{system.quantity}}'
+            data-dtype='Number'
+          />
+        </div>
+      {{/if}}
+
+      {{#if (or (eq item.type 'gear') (eq item.type 'weapon'))}}
+        <div class='flex-group-center sheet-col'>
+          <label class='resource-label'>{{localize 'CS_SYSTEM.Item.Fields.weight'}}</label>
+          <input
+            class='info-input-small'
+            type='text'
+            name='system.weight'
+            value='{{system.weight}}'
+            data-dtype='String'
+          />
+        </div>
+      {{/if}}
+
+    </div>
+  
+  </div>
+
+</header>

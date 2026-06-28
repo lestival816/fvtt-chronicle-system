@@ -1,0 +1,289 @@
+{{! Character Details Tab }}
+<section class='tab details scrollable {{tab.cssClass}}' data-group='primary' data-tab='details'>
+
+{{! Character Details }}
+<section class='grid grid-3col'>
+
+  <div class='flex-group-left'>
+      <label class='resource-label fixed-label'>{{localize 'CS_SYSTEM.Actor.Character.Fields.details.age'}}</label>
+      <input
+          type='text'
+          name='system.details.age'
+          value='{{system.details.age}}'
+          data-dtype='String'
+          class='info-input'
+      />
+  </div>
+  <div class='flex-group-left'>
+      <label class='resource-label fixed-label'>{{localize 'CS_SYSTEM.Actor.Character.Fields.details.eyeColor'}}</label>
+      <input
+          type='text'
+          name='system.details.eyeColor'
+          value='{{system.details.eyeColor}}'
+          data-dtype='String'
+          class='info-input'
+      />
+  </div>
+  <div class='flex-group-left'>
+    <label class='resource-label fixed-label'>{{localize 'CS_SYSTEM.Actor.Character.Fields.details.hairColor'}}</label>
+      <input
+          type='text'
+          name='system.details.hairColor'
+          value='{{system.details.hairColor}}'
+          data-dtype='String'
+          class='info-input'            
+      />
+  </div>
+    <div class='flex-group-left'>
+      <label class='resource-label fixed-label'>{{localize 'CS_SYSTEM.Actor.Character.Fields.details.gender'}}</label>
+      <input
+          type='text'
+          name='system.details.gender'
+          value='{{system.details.gender}}'
+          data-dtype='String'
+          class='info-input'            
+      />
+  </div>
+  <div class='flex-group-left'>    
+      <label class='resource-label fixed-label'>{{localize 'CS_SYSTEM.Actor.Character.Fields.details.height'}}</label>
+      <input
+          type='text'
+          name='system.details.height'
+          value='{{system.details.height}}'
+          data-dtype='String'
+          class='info-input'              
+      />
+  </div>
+  <div class='flex-group-left'>      
+      <label class='resource-label fixed-label'>{{localize 'CS_SYSTEM.Actor.Character.Fields.details.weight'}}</label>
+      <input
+          type='text'
+          name='system.details.weight'
+          value='{{system.details.weight}}'
+          data-dtype='String'
+          class='info-input'  
+      />
+  </div>
+  <div class='flex-group-left'>
+      <label class='resource-label fixed-label'>{{localize 'CS_SYSTEM.Actor.Character.Fields.details.house'}}</label>
+      <input
+          type='text'
+          name='system.details.house'
+          value='{{system.details.house}}'
+          data-dtype='String'
+          class='info-input'             
+      />
+  </div>
+   <div class='flex-group-left grid-span-2'>
+      <label class='resource-label fixed-label'> {{localize 'CS_SYSTEM.Actor.Character.Fields.details.motto'}}</label>
+      <input
+          type='text'
+          name='system.details.motto'
+          value='{{system.details.motto}}'
+          data-dtype='String'
+          class='info-input' 
+      />
+  </div>
+
+</section>
+
+<div class='separator'></div>
+
+{{! Biography }}
+
+  <div class='col-header-container'>
+    <h3 class='scores-header'>
+      {{localize 'CS_SYSTEM.Actor.Character.Fields.biography.header'}}
+    </h3>
+  </div>
+
+
+  {{! Editors must receive enriched text data from getData to properly handle rolls, UUID links, etc. }}
+  <div class='editor'>
+    {{#if editable}} 
+      <prose-mirror name='system.biography' data-document-uuid='{{actor.uuid}}' value='{{system.biography}}' collaborate='true' toggled='true'>
+        {{{enrichedBiography}}}
+      </prose-mirror>
+    {{else}} {{{enrichedBiography}}}
+    {{/if}}
+  </div>
+
+<div class='separator'></div>
+
+{{! Character Points  }}
+<section class='grid grid-3col'>
+
+  <div class='sheet-col'>
+
+    <div class='flexrow col-header-container'>
+      <h3 class='scores-header'>
+        {{localize 'CS_SYSTEM.Actor.Character.Fields.qualities.destiny.label'}}
+      </h3>
+    </div>
+
+    <div class='flex-group-left mb-5'>
+      <label class='resource-label flex-grow-label'>{{localize 'CS_SYSTEM.Actor.Character.Fields.qualities.destiny.base'}}</label>
+      <input type='text' name='system.qualities.destiny.base' value='{{system.qualities.destiny.base}}' class='scores-box' data-dtype='Number'/>
+    </div>
+    <div class='flex-group-left mb-5'>
+      <label class='resource-label flex-grow-label'>{{localize 'CS_SYSTEM.Actor.Character.Fields.qualities.destiny.gained'}}</label>
+      <input type='text' name='system.qualities.destiny.gained' value='{{system.qualities.destiny.gained}}' class='scores-box' data-dtype='Number'/>
+    </div>
+    <div class='flex-group-left mb-5'>
+      <label class='resource-label flex-grow-label'>{{localize 'CS_SYSTEM.Actor.Character.Fields.qualities.destiny.invested'}}</label>
+      <input type='text' name='system.qualities.destiny.invested' value='{{system.qualities.destiny.invested}}' class='scores-box' data-dtype='Number'/>
+    </div>
+    <div class='flex-group-left mb-5'>
+      <label class='resource-label flex-grow-label'>{{localize 'CS_SYSTEM.Actor.Character.Fields.qualities.destiny.spent'}}</label>
+      <input type='text' name='system.qualities.destiny.spent' value='{{system.qualities.destiny.spent}}' class='scores-box box' data-dtype='Number'/>
+    </div>
+        <div class='flex-group-left mb-5'>
+      <label class='resource-label flex-grow-label'>{{localize 'CS_SYSTEM.Actor.Character.Fields.qualities.destiny.burnt'}}</label>
+      <input type='text' name='system.qualities.destiny.burnt' value='{{system.qualities.destiny.burnt}}' class='scores-box box' data-dtype='Number'/>
+    </div>
+    <div class='flex-group-left'>
+      <label class='resource-label flex-grow-label'>{{localize 'CS_SYSTEM.Actor.Character.Fields.qualities.destiny.available'}}</label>
+      <input type='text' name='system.qualities.destiny.available' value='{{system.qualities.destiny.available}}' disabled class='scores-box box-disabled' data-dtype='Number'/>
+    </div>
+
+  </div>    
+
+  <div class='sheet-col border-left-right'>
+
+    <div class='flexrow col-header-container'>
+      <h3 class='scores-header'>
+        {{localize 'CS_SYSTEM.Actor.Character.Fields.qualities.glory.label'}}
+      </h3>
+    </div>
+
+    <div class='flex-group-left mb-5'>
+      <label class='resource-label flex-grow-label'>{{localize 'CS_SYSTEM.Actor.Character.Fields.qualities.glory.total'}}</label>
+      <input type='text' name='system.qualities.glory.total' value='{{system.qualities.glory.total}}' class='scores-box' data-dtype='Number'/>
+    </div>
+    <div class='flex-group-left mb-5'>
+      <label class='resource-label flex-grow-label'>{{localize 'CS_SYSTEM.Actor.Character.Fields.qualities.glory.spent'}}</label>
+      <input type='text' name='system.qualities.glory.spent' value='{{system.qualities.glory.spent}}' class='scores-box' data-dtype='Number'/>
+    </div>
+    <div class='flex-group-left'>
+      <label class='resource-label flex-grow-label'>{{localize 'CS_SYSTEM.Actor.Character.Fields.qualities.glory.available'}}</label>
+      <input type='text' name='system.qualities.glory.available' value='{{system.qualities.glory.available}}' disabled class='scores-box box-disabled' data-dtype='Number'/>
+    </div>
+
+  </div>
+
+  <div class='sheet-col'>
+
+    <div class='flexrow col-header-container'>
+      <h3 class='scores-header'>
+        {{localize 'CS_SYSTEM.Actor.Character.Fields.qualities.experience.label'}}
+      </h3>
+    </div>
+
+    <div class='flex-group-left mb-5'>
+      <label class='resource-label flex-grow-label'>{{localize 'CS_SYSTEM.Actor.Character.Fields.qualities.experience.total'}}</label>
+      <input type='text' name='system.qualities.experience.total' value='{{system.qualities.experience.total}}' class='scores-box' data-dtype='Number'/>
+    </div>
+    <div class='flex-group-left mb-5'>
+      <label class='resource-label flex-grow-label'>{{localize 'CS_SYSTEM.Actor.Character.Fields.qualities.experience.spent'}}</label>
+      <input type='text' name='system.qualities.experience.spent' value='{{system.qualities.experience.spent}}' class='scores-box' data-dtype='Number'/>
+    </div>
+    <div class='flex-group-left'>
+      <label class='resource-label flex-grow-label'>{{localize 'CS_SYSTEM.Actor.Character.Fields.qualities.experience.available'}}</label>
+      <input type='text' name='system.qualities.experience.available' value='{{system.qualities.experience.available}}' disabled class='scores-box box-disabled' data-dtype='Number'/>
+    </div>
+  </div>    
+</section>
+
+<div class='separator'></div>
+
+{{! Qualities }}
+<div class='col-header-container'>
+  <h3 class='scores-header'>
+    {{localize 'CS_SYSTEM.Actor.Character.Fields.qualities.header'}}
+  </h3>
+</div>
+
+{{! -- Partials --}}
+
+{{! Benefits and Drawbacks }}
+<section class='grid grid-2col'>
+
+
+  {{! Benefits }}
+  {{> "systems/fvttchroniclesystem/templates/actor/parts/actor-benefits.hbs" 
+      header="CS_SYSTEM.Actor.Character.Fields.qualities.benefits.header"
+      nameLabel="CS_SYSTEM.Actor.Character.Fields.qualities.benefits.name"
+      effectLabel="CS_SYSTEM.Actor.Character.Fields.qualities.benefits.effect"
+      path="system.qualities.benefits"
+      collection=system.qualities.benefits
+  }}
+
+  {{! Drawbacks }}
+  {{> "systems/fvttchroniclesystem/templates/actor/parts/actor-benefits.hbs" 
+      header="CS_SYSTEM.Actor.Character.Fields.qualities.drawbacks.header"
+      nameLabel="CS_SYSTEM.Actor.Character.Fields.qualities.drawbacks.name"
+      effectLabel="CS_SYSTEM.Actor.Character.Fields.qualities.drawbacks.effect"
+      path="system.qualities.drawbacks"
+      collection=system.qualities.drawbacks
+  }}
+
+</section>
+
+{{! Other qualities }}
+<section class='grid grid-3col'>
+  {{> "systems/fvttchroniclesystem/templates/actor/parts/actor-qualities.hbs" 
+      label='CS_SYSTEM.Actor.Character.Fields.qualities.virtues' 
+      path='system.qualities.virtues' 
+      collection=system.qualities.virtues}}
+
+  {{> "systems/fvttchroniclesystem/templates/actor/parts/actor-qualities.hbs" 
+      label='CS_SYSTEM.Actor.Character.Fields.qualities.vices' 
+      path='system.qualities.vices' 
+      collection=system.qualities.vices}}
+
+  {{> "systems/fvttchroniclesystem/templates/actor/parts/actor-qualities.hbs" 
+      label='CS_SYSTEM.Actor.Character.Fields.qualities.goals' 
+      path='system.qualities.goals' 
+      collection=system.qualities.goals}}
+</section>
+
+<section class='grid grid-3col'>
+  {{> "systems/fvttchroniclesystem/templates/actor/parts/actor-qualities.hbs" 
+      label='CS_SYSTEM.Actor.Character.Fields.qualities.motivations' 
+      path='system.qualities.motivations' 
+      collection=system.qualities.motivations}}
+
+  {{> "systems/fvttchroniclesystem/templates/actor/parts/actor-qualities.hbs" 
+      label='CS_SYSTEM.Actor.Character.Fields.qualities.mannerisms' 
+      path='system.qualities.mannerisms' 
+      collection=system.qualities.mannerisms}}
+
+  {{> "systems/fvttchroniclesystem/templates/actor/parts/actor-qualities.hbs" 
+      label='CS_SYSTEM.Actor.Character.Fields.qualities.distinguishingFeatures' 
+      path='system.qualities.distinguishingFeatures' 
+      collection=system.qualities.distinguishingFeatures}}
+</section>
+
+<section class='grid grid-3col'>
+  {{> "systems/fvttchroniclesystem/templates/actor/parts/actor-qualities.hbs" 
+      label='CS_SYSTEM.Actor.Character.Fields.qualities.retainers' 
+      path='system.qualities.retainers' 
+      collection=system.qualities.retainers}}
+
+  {{> "systems/fvttchroniclesystem/templates/actor/parts/actor-qualities.hbs" 
+      label='CS_SYSTEM.Actor.Character.Fields.qualities.allies' 
+      path='system.qualities.allies' 
+      collection=system.qualities.allies}}
+
+  {{> "systems/fvttchroniclesystem/templates/actor/parts/actor-qualities.hbs" 
+      label='CS_SYSTEM.Actor.Character.Fields.qualities.enemies' 
+      path='system.qualities.enemies' 
+      collection=system.qualities.enemies}}
+</section>
+
+<section class='grid grid-3col'>
+  {{> "systems/fvttchroniclesystem/templates/actor/parts/actor-qualities.hbs" 
+      label='CS_SYSTEM.Actor.Character.Fields.qualities.oaths' 
+      path='system.qualities.oaths' 
+      collection=system.qualities.oaths}}
+</section>

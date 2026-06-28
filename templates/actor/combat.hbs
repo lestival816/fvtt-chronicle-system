@@ -1,0 +1,216 @@
+fields{{! Combat & Intrigue Tab }}
+<section class='tab combat scrollable {{tab.cssClass}}' data-group='primary' data-tab='combat'>
+
+  <section class='grid grid-3col'>
+
+    {{! --- COLUMN 1 : COMBAT --- }}
+    <div class='sheet-col'>
+
+      <div class='flexcol col-header-container'>
+        <h3 class='scores-header'>
+          {{localize 'CS_SYSTEM.Actor.Character.Fields.combat.header'}}
+        </h3>
+        <div class='flexrow'>
+          <label class='ressource-label'>{{localize 'CS_SYSTEM.Actor.Character.Fields.combat.initiative.label'}}</label>
+          <i class='fas fa-dice rollable ml-5'
+            data-action='roll'
+            data-roll-type='cbtInitiative'
+            data-ability='{{combatInitiative.ability}}'
+            data-speciality='{{combatInitiative.speciality}}'
+            data-roll='{{combatInitiative.roll}}'
+            data-label='{{combatInitiative.label}}'>
+          </i>
+        </div>
+      </div>
+
+      <div class='flexrow'>
+        <div class='flexcol flex-group-center'>
+          <label class='resource-label' data-tooltip='{{localize 'CS_SYSTEM.Actor.Character.Fields.combat.defense.tooltip'}}'>
+            {{localize 'CS_SYSTEM.Actor.Character.Fields.combat.defense.label'}}
+          </label>
+          <input type='text' name='system.combatDefense.value' value='{{system.combatDefense.value}}' disabled class='scores-box box-disabled' data-dtype='Number'/>
+        </div>        
+        
+        <div class='flexcol flex-group-center'>
+          <label class='resource-label'>
+            {{localize 'CS_SYSTEM.Actor.Character.Fields.combat.defense.bonus'}}
+          </label>
+          <input type='text' name='system.combatDefense.bonus' value='{{system.combatDefense.bonus}}' class='scores-box' data-dtype='Number'/>
+        </div>
+      </div>
+
+      <div class='separator'></div>
+
+      <div class='flex-group-left' data-tooltip='{{localize 'CS_SYSTEM.Actor.Character.Fields.fatigue.tooltip'}}'>
+        <label class='resource-label flex-grow-label'>{{localize 'CS_SYSTEM.Actor.Character.Fields.fatigue.label'}}</label>
+        <input type='text' name='system.fatigue.value' value='{{system.fatigue.value}}' class='scores-box' data-dtype='Number'/>
+        <span class='sep'> / </span>
+        <input type='text' name='system.fatigue.max' value='{{system.fatigue.max}}' disabled class='scores-box box-disabled' data-dtype='Number'/>
+      </div>
+
+    </div>
+
+    {{! --- COLUMN 2 : ARMOR --- }}
+    <div class='sheet-col border-left-right'>
+
+      <div class='flexrow col-header-container'>
+        <h3 class='scores-header'>
+          {{localize 'CS_SYSTEM.Actor.Character.Fields.armor.header'}}
+        </h3>
+      </div>
+      
+      <div class='flex-group-left'>
+        <input type='text' placeholder='{{localize 'CS_SYSTEM.Actor.Character.Fields.armor.placeholder'}}' name='system.armor.type' value='{{system.armor.type}}' class='info-input' data-dtype='String'/>
+      </div>
+
+      <div class='flex-group-left mt-5 mb-5'>
+        <label class='resource-label flex-grow-label'>{{localize 'CS_SYSTEM.Actor.Character.Fields.armor.rating'}}</label>
+        <input type='text' name='system.armor.rating' value='{{system.armor.rating}}' class='scores-box' data-dtype='Number'/>
+      </div>
+
+      <div class='flex-group-left mb-5'>
+        <label class='resource-label flex-grow-label'>{{localize 'CS_SYSTEM.Actor.Character.Fields.armor.penalty'}}</label>
+        <input type='text' name='system.armor.penalty' value='{{system.armor.penalty}}' class='scores-box' data-dtype='Number'/>
+      </div>
+
+      <div class='flex-group-left'>
+        <label class='resource-label flex-grow-label'>{{localize 'CS_SYSTEM.Actor.Character.Fields.armor.bulk'}}</label>
+        <input type='text' name='system.armor.bulk' value='{{system.armor.bulk}}' class='scores-box' data-dtype='Number'/>
+      </div>
+
+    </div>
+
+    {{! --- COLUMN 3 : INTRIGUE --- }}
+    <div class='sheet-col'>
+
+      <div class='flexcol col-header-container'>
+        <h3 class='scores-header'>
+          {{localize 'CS_SYSTEM.Actor.Character.Fields.intrigue.header'}}
+        </h3>
+        <div class='flexrow'>
+          <label class='ressource-label'>{{localize 'CS_SYSTEM.Actor.Character.Fields.combat.initiative.label'}}</label>
+          <i class='fas fa-dice rollable ml-5'
+            data-action='roll'
+            data-roll-type='itrInitiative'
+            data-ability='{{intrigueInitiative.ability}}'
+            data-speciality='{{intrigueInitiative.speciality}}'
+            data-roll='{{intrigueInitiative.roll}}'
+            data-label='{{intrigueInitiative.label}}'>
+          </i>
+        </div>        
+      </div>
+
+      <div class='flexrow'>
+        <div class='flexcol flex-group-center'>
+          <label class='resource-label' data-tooltip='{{localize 'CS_SYSTEM.Actor.Character.Fields.intrigue.defense.tooltip'}}'>
+            {{localize 'CS_SYSTEM.Actor.Character.Fields.intrigue.defense.label'}}
+          </label>
+          <input type='text' name='system.intrigue.defense.value' value='{{system.intrigueDefense.value}}' disabled class='scores-box box-disabled' data-dtype='Number'/>
+        </div>
+
+        <div class='flexcol flex-group-center'>
+          <label class='resource-label'>
+            {{localize 'CS_SYSTEM.Actor.Character.Fields.intrigue.defense.bonus'}}
+          </label>
+          <input type='text' name='system.intrigue.defense.bonus' value='{{system.intrigueDefense.bonus}}' class='scores-box' data-dtype='Number'/>
+        </div>
+      </div>
+
+      <div class='separator'></div>
+      
+      <div class='flex-group-left mb-5'>
+        <label class='resource-label flex-grow-label'>{{localize 'CS_SYSTEM.Actor.Character.Fields.composure.bonus'}}</label>
+        <input type='text' name='system.composure.bonus' value='{{system.composure.bonus}}' class='scores-box' data-dtype='Number'/>
+      </div>
+
+      <div class='flex-group-left mb-5'>
+        <label class='resource-label flex-grow-label'>{{localize 'CS_SYSTEM.Actor.Character.Fields.composure.label'}}</label>
+        <input type='text' name='system.composure.value' value='{{system.composure.value}}' class='scores-box' data-dtype='Number'/>
+        <span class='sep'> / </span>
+        <input type='text' name='system.composure.max' value='{{system.composure.max}}' disabled class='scores-box box-disabled' data-dtype='Number'/>
+      </div>
+
+      <div class='separator'></div>
+
+      <div class='flex-group-left' data-tooltip='{{localize 'CS_SYSTEM.Actor.Character.Fields.frustration.tooltip'}}'>
+        <label class='resource-label flex-grow-label'>
+          {{localize 'CS_SYSTEM.Actor.Character.Fields.frustration.label'}}
+        </label>
+          <input type='text' name='system.frustration.value' value='{{system.frustration.value}}' class='scores-box' data-dtype='Number'/>
+          <span class='sep'> / </span>
+          <input type='text' name='system.frustration.max' value='{{system.frustration.max}}' disabled class='scores-box box-disabled' data-dtype='Number'/>
+      </div>
+
+    </div>
+
+  </section>
+
+  <div class='separator'></div>
+  
+  <section class='grid grid-3col'>
+    {{! Weapon list }}
+    <ol class='items-list grid-span-3'>
+      <li class='item flexrow items-header'>
+        <div class='item-name'>{{localize 'CS_SYSTEM.Item.Weapon.label'}}</div>
+        <div class='item-name'>{{localize 'GAME.MESSAGES.List.weaponHeaderAction'}}</div>
+        <div class='item-name'>{{localize 'GAME.MESSAGES.List.weaponHeaderDamage'}}</div>  
+        <div class='item-controls'>
+          {{#if @root.editable}}
+            <a
+              class='item-control item-create'
+              data-tooltip='{{localize 'GAME.MESSAGES.List.create'}}'
+              data-action='createDoc'
+              data-document-class='Item'
+              data-type='weapon'
+            >
+              <i class='fas fa-plus'></i>
+            </a>
+          {{/if}}
+        </div>
+      </li>
+      {{#each weapon as |item id|}}
+        <li
+          class='item flexrow draggable'
+          data-item-id='{{item._id}}'
+          data-document-class='Item'
+        >
+          <div class='item-name'>
+            <div>{{item.name}}</div>
+          </div>
+          <div class='item-name'>
+            <div>{{localize 'CS_SYSTEM.Item.Weapon.button.attack'}}</div>
+            <i class='fas fa-dice rollable ml-5'
+               data-action='roll'
+               data-roll-type='attack'
+               data-ability='{{item.hbsData.abilityKey}}'
+               data-speciality='{{item.hbsData.specKey}}'
+               data-roll='{{item.hbsData.rollString}}'
+               data-label='{{item.hbsData.fullLabel}}'>
+            </i>
+          </div>
+          <div class='item-name'>
+            <div>{{item.hbsData.damageAblLabel}}</div>
+          </div>
+          <div class='item-controls'>
+            <a
+              data-tooltip='{{localize 'GAME.MESSAGES.List.update'}}'
+              data-action='viewDoc'
+            >
+              <i class='fas fa-edit'></i>
+            </a>
+            {{#if @root.editable}}
+              <a
+                data-tooltip='{{localize 'GAME.MESSAGES.List.delete'}}'
+                data-action='deleteDoc'
+              >
+                <i class='fas fa-trash'></i>
+              </a>
+            {{/if}}
+          </div>
+        </li>
+      {{/each}}
+    </ol>
+
+  </section>
+
+</section>

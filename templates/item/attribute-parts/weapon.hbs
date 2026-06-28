@@ -1,0 +1,60 @@
+{{! Weapon Traits Tab }}
+<section class='tab attributes {{tab.cssClass}}' data-group='primary' data-tab='attributes'>
+  <div class='grid grid-2col'>
+    
+    {{!-- Left Column: Category and Scaling --}}
+    <div class='sheet-col'>
+      <div class='flex-group-left'>
+        <label class='resource-label fixed-label'>{{localize 'CS_SYSTEM.Item.Weapon.Fields.typeLabel'}}</label>
+        <select class='info-input ml-2' name='system.type'>
+          {{selectOptions weaponTypeOptions selected=system.type}}
+        </select>
+      </div>
+
+      {{!-- Specialty Bloc: Dynamically populated from Fighting or Marksmanship --}}
+      <div class='flex-group-left mt-5'>
+        <label class='resource-label fixed-label'>{{localize 'CS_SYSTEM.Speciality.label'}}</label>
+        <select class='info-input ml-2' name='system.weaponSpecialty'>
+          {{selectOptions specialitiesList selected=system.weaponSpecialty blank=""}}
+        </select>
+      </div>
+
+      <div class='flex-group-left mt-5'>
+        <label class='resource-label fixed-label'>{{localize 'CS_SYSTEM.Item.Weapon.Fields.damageAbility'}}</label>
+        <select class='info-input ml-2' name='system.damageAbility'>
+          {{selectOptions abilitiesList selected=system.damageAbility}}
+        </select>
+      </div>
+    </div>
+
+    {{!-- Right Column: Modifiers and Quality and Traing --}}
+    <div class='sheet-col'>
+      <div class='flex-group-left'>
+        <label class='resource-label fixed-label'>{{localize 'CS_SYSTEM.Item.Weapon.Fields.quality.label'}}</label>
+        <select class='info-input ml-2' name='system.quality'>
+          {{selectOptions qualityOptions selected=system.weaponQuality}}
+        </select>
+      </div>
+
+      <div class='flex-group-left mt-5'>
+        <label class='resource-label fixed-label'>{{localize 'CS_SYSTEM.Item.Weapon.Fields.training'}}</label>
+        <input class='scores-box' type='text' name='system.training' value='{{system.training}}'/>
+        <label class='resource-label ml-2'>B</label>
+      </div>
+
+      <div class='flex-group-left mt-5'>
+        <label class='resource-label fixed-label'>{{localize 'CS_SYSTEM.Item.Weapon.Fields.damageModifier'}}</label>
+        <input class='scores-box' type='text' name='system.damageModifier' value='{{system.damageModifier}}' data-dtype='Number' />
+      </div>
+    </div>
+  </div>
+
+  {{!-- Bottom Row: Weapon Traits (Properties) --}}
+  <div class='sheet-col mt-5'>
+    <div class='flex-group-left'>
+      <label class='resource-label fixed-label'>{{localize 'CS_SYSTEM.Item.Weapon.Fields.qualities.label'}}</label>
+      <input class='info-input' type='text' name='system.weaponQualities' value='{{system.weaponQualities}}' 
+             placeholder="{{localize 'CS_SYSTEM.Item.Weapon.Fields.qualities.placeholder'}}" />
+    </div>
+  </div>
+</section>
